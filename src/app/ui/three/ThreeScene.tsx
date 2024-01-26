@@ -28,6 +28,31 @@ const ThreeScene: React.FC = () => {
     <div style={{height:"48px", padding:'1.25rem', position:'fixed', zIndex:'1'}}>
       <h1 style={{marginBottom:"1rem", fontFamily:'sans-serif', fontSize:'12pt'}}>Seleziona il colore delle impunture</h1>
       <HexColorPicker color={color} onChange={setColor}/>
+      <div style={{marginTop:"1rem", fontFamily:'sans-serif', fontSize:'12pt', display:'grid', width:'77%'}}>
+        <input
+          style={{marginBottom:'0.5rem'}}
+          type="text"
+          name="colorHex"
+          id="colorHex-input"
+          placeholder="#aabbcc"
+          aria-describedby="helpId"
+          onChange={(e) => {
+            setColor(e.target.value)
+          }}
+        />
+        <select
+          id="presetColor-input"
+          defaultValue={""}
+          onChange={(e) => {setColor(e.target.value)}}
+          aria-label="Default select example"
+          >
+          <option value="#aabbcc">Colore 0</option>
+          <option value="#970c08">Colore 1</option>
+          <option value="#d4ab16">Colore 2</option>
+          <option value="#000000">Colore 3</option>
+          <option value="#cccccc">Colore 4</option>
+        </select>
+      </div>
     </div>
 
     <Canvas style={{position:'fixed', zIndex:'0'}} ref={canvas} shadows>
