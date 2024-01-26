@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React from 'react'
+import React, { useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -25,10 +25,10 @@ const roughMap = textureLoader.load('/Piazzate/ROUGHNESS.png');
 roughMap.colorSpace = THREE.LinearSRGBColorSpace;
 roughMap.flipY = false;
 
-export function Borsa(props: JSX.IntrinsicElements['group']) {
+export function Borsa(props: JSX.IntrinsicElements['group'] & { coloreImpunture: string }) {
   const { nodes, materials } = useGLTF('/Borsa.gltf') as GLTFResult
   nodes.Metal.material = new THREE.MeshPhysicalMaterial({color:"#b7b3b3", roughness:0.3, metalness: 1, ior:1.5, reflectivity:1})
-  nodes.Impunture.material = new THREE.MeshPhysicalMaterial({color:"#AE9573", roughness:0.5, metalness: 0, ior:1.5, reflectivity:1})
+  nodes.Impunture.material = new THREE.MeshPhysicalMaterial({color: props.coloreImpunture, roughness:0.5, metalness: 0, ior:1.5, reflectivity:1})
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Tessuto.geometry} material={nodes.Tessuto.material}>
