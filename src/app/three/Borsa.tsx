@@ -27,7 +27,7 @@ roughMap.flipY = false;
 
 export function Borsa(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/Borsa.gltf') as GLTFResult
-  nodes.Metal.material = new THREE.MeshPhysicalMaterial({color:"#F4F1ED", roughness:0.3, metalness: 1, ior:1.5, reflectivity:1})
+  nodes.Metal.material = new THREE.MeshPhysicalMaterial({color:"#b7b3b3", roughness:0.3, metalness: 1, ior:1.5, reflectivity:1})
   nodes.Impunture.material = new THREE.MeshPhysicalMaterial({color:"#AE9573", roughness:0.5, metalness: 0, ior:1.5, reflectivity:1})
   return (
     <group {...props} dispose={null}>
