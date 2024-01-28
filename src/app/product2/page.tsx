@@ -11,7 +11,7 @@ export default function Product2() {
   return (
     <>
       <ThreeScene product={1}>
-        <Borsa position={[0, 0, 0]} rotation={[0, 0, 0]} scale={4} coloreImpunture={context?.options.pickedColor ?? "#FFFFFF"} maps={{color: "/Ripetute/COLOR.jpg", normal: "/Ripetute/NORMAL.jpg", roughness: "/Ripetute/ROUGHNESS.jpg"}}/>
+        <Borsa position={[0, 0, 0]} rotation={[0, 0, 0]} scale={4} coloreImpunture={context?.options.pickedColor ?? "#aabbcc"} maps={{color: "/Ripetute/COLOR.jpg", normal: "/Ripetute/NORMAL.jpg", roughness: "/Ripetute/ROUGHNESS.jpg"}}/>
       </ThreeScene>
     </>
   )

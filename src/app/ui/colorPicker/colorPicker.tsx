@@ -32,7 +32,7 @@ export function ColorPicker() {
         />
         <select
           id="presetColor-input"
-          defaultValue={""}
+          defaultValue={context?.options.pickedColor ?? ""}
           onChange={(e) => {setColor(e.target.value)}}
           aria-label="Default select example"
           >
