@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import 'styles/globals.css';
+import { Provider, defaultOptions } from './provider';
 
 export const metadata: Metadata = {
   title: 'Tailoor Test',
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='bg-white grid'>
-        <div>
-          {children}
-        </div>
+        <Provider options={defaultOptions}>
+          <div>
+            {children}
+          </div>
+        </Provider>
       </body>
     </html>
   )
